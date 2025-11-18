@@ -29,6 +29,9 @@ WORKDIR /test
 COPY locations-under-test.conf locations-under-test.conf
 COPY t/locations_old_query.t t/locations_old_query.t
 
+COPY locations-under-test2.conf locations-under-test2.conf
+COPY t/locations_users.t t/locations_users.t
+
 # ---------------------------
 # 4. Указываем Test::Nginx, где nginx
 # ---------------------------
@@ -38,3 +41,4 @@ ENV TEST_NGINX_BINARY=/usr/sbin/nginx
 # 5. Запуск тестов
 # ---------------------------
 CMD ["prove", "-I.", "-v", "t/locations_old_query.t"]
+#CMD ["prove", "-I.", "-v", "t/locations_users.t"]
