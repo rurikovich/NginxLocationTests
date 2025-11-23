@@ -4,10 +4,8 @@ services:
     build: echo
     ports:
       - "9000:9000" # опционально, удобно для отладки
-  python_nginx:
+  pnginx:
     build: nginx
     depends_on: [python_echo]
-    environment:
-      - MY_SERVER=http://localhost:8080
     ports:
       - "8080:8080"
